@@ -1,0 +1,19 @@
+.image {
+  height: 300px;
+  width: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -82px;
+}
+
+body {
+  background-image: url(https://www.transparenttextures.com/patterns/basketball.png);
+}
