@@ -10,6 +10,10 @@
   font-family: 'Bungee', cursive;
 }
 
+.button:hover {
+  border: 5px solid rgb(96, 134, 227);
+}
+
 #tweet-text {
   display: flex;
   align-items: flex-end;
@@ -29,13 +33,23 @@
   font-family: 'Bungee', cursive;
 }
 
+
+
 .counter {
   color: #545149;
 }
 
 .new-tweet {
-  padding: 0 20px;
-  width: 100%;
+  padding-top: 100px;
+  
+}
+
+.error {
+  padding: 4rem;
+  color: red;
+  display: flex;
+  align-items: center;
+  font-family: 'Bungee', cursive;
 }
 
 article {
@@ -52,7 +66,6 @@ article {
 
 ._spaceTab {
   display: block;
-  /*justify-content: space-between;*/
 }
 
 .left-margin{
@@ -60,7 +73,7 @@ article {
 }
 
 .name {
-  float: right;
+ 
   padding: 1rem 0 0 1rem;
   display: flex;
   align-items: center;
@@ -79,7 +92,7 @@ article {
 
 }
 
-.tweet {
+.tweets {
   font-size: smaller;
   padding: 7rem 3em 1em 1em;
   margin-left: 1em;
@@ -106,7 +119,7 @@ article {
   color: #4056a1;
 }
 
-article:hover {
+.tweet:hover {
   box-shadow: 0 0 15px #4056a1; 
 }
 

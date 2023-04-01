@@ -13,6 +13,31 @@ html {
 /*
  * Global layout stuff
  */
+/* Mobile Styles */
+ @media only screen and (max-width: 400px){
+
+
+}
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px){
+  
+  .navbar {
+    background-color: burlywood;
+  }
+
+
+ }
+/* Desktop Styles */
+ @media only screen and (min-width: 961px){
+ 
+body{
+  display: flex;
+}
+
+.header{
+  margin: 15rem;
+}
+ }
 
 body {
   color: #545149;

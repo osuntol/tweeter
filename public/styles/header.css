@@ -1,19 +1,15 @@
-.image {
-  height: 300px;
-  width: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header{
+  background-color: burlywood;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center; 
+ height: 520px;
+ padding-top: 120px;
+ width: 100%;
+ background-image: url(https://www.transparenttextures.com/patterns/basketball.png); 
 }
 
-h2 {
-  position:relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -82px;
-}
-
-body {
-  background-image: url(https://www.transparenttextures.com/patterns/basketball.png);
+.Yourname{
+color:#FFFFFF; 
 }
