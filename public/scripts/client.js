@@ -64,7 +64,6 @@ const renderTweets = function(tweets) {
 const loadTweets = function() {
   $.ajax("/tweets", { method: 'GET' })
     .then((response) => {
-      console.log('RESPONSE', response)
       renderTweets(response);
     })
 }
@@ -74,7 +73,6 @@ loadTweets();
 $('#submit-form').submit(function(event) {
   event.preventDefault();
   const data = $('#tweet-text').serialize();
-  console.log('DATA--->', data)
   if (data.length === 0) {
     alert('tweet not present')
     return false
@@ -94,7 +92,6 @@ $('#submit-form').submit(function(event) {
         console.error(error);
       }
     });
-    console.log('data', data);
   }
 })
 
