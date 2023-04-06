@@ -8,20 +8,22 @@
 // Fake data taken from initial-tweets.json
 
 $(document).ready(function() {
-//hide error element tag 
-$('.error').hide()
+  //hide error element tag 
+  $('.error').hide()
 
+  //using escape text to prevent script inputs from withtin the app
+  const escapeText = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-const escapeText = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}; 
-
-
-function createTweetElement(object) {
-  let $tweet = $('<article/>').addClass("tweet");
-  const html = `
+  //creating tweet element 
+  function createTweetElement(object) {
+    //creating jquery variable to create article tag and add tweet class
+    let $tweet = $('<article/>').addClass("tweet");
+    //using template literal to insert values from object into page to make dynamic.
+    const html = `
   <header class="header-tweet">
   <div class="_spaceTab">
   <div class="left-margin">
@@ -48,52 +50,52 @@ function createTweetElement(object) {
   </span>
   </footer>
   `
-
-  $tweet.html(html);
-  return $tweet;
-}
-
-const renderTweets = function(tweets) {
-  const container = $('#tweets-container')
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
-    container.append($tweet);
+    $tweet.html(html);
+    return $tweet;
   }
-}
 
-const loadTweets = function() {
-  $.ajax("/tweets", { method: 'GET' })
-    .then((response) => {
-      renderTweets(response);
-    })
-}
-
-loadTweets();
-
-$('#submit-form').submit(function(event) {
-  event.preventDefault();
-  const data = $('#tweet-text').serialize();
-  if (data.length === 0) {
-    alert('tweet not present')
-    return false
-  } if (data.length > 140) {
-   $('.error').slideDown();
-  } else {
-    $('.error').hide()
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: data,
-      success: function() {
-        loadTweets();
-        $('#tweet-text').val('')
-      },
-      error: function(xhr, status, error) {
-        console.error(error);
-      }
-    });
+  const renderTweets = function(tweets) {
+    const container = $('#tweets-container')
+    for (let tweet of tweets) {
+      let $tweet = createTweetElement(tweet);
+      container.prepend($tweet);
+    }
   }
-})
+
+  const loadTweets = function() {
+    // tweets route and the method get
+    // using .then to render tweets 
+    $.ajax("/tweets", { method: 'GET' })
+      .then((response) => {
+        renderTweets(response);
+      })
+  }
+
+  loadTweets();
+
+  $('#submit-form').submit(function(event) {
+    event.preventDefault();
+    const data = $('#tweet-text').serialize();
+    if (data.length <= 5) {
+      return alert('tweet not present')
+    } if (data.length > 145) {
+      $('.error').slideDown();
+    } else {
+      $('.error').hide()
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: data,
+        success: function() {
+          loadTweets();
+          $('#tweet-text').val('')
+        },
+        error: function(xhr, status, error) {
+          console.error(error);
+        }
+      });
+    }
+  })
 
 
 
