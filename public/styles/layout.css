@@ -16,11 +16,9 @@ html {
 /*
  * Global layout stuff
  */
-/* Mobile Styles */
-@media only screen and (max-width: 400px) {}
 
 /* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (max-width: 1024px) {
 
   .navbar {
     background-color: burlywood;
@@ -30,7 +28,7 @@ html {
 }
 
 /* Desktop Styles */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1025px) {
 
   #submit-form {
     margin-right: 1.5rem;
