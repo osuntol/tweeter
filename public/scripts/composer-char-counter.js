@@ -7,6 +7,8 @@ $(document).ready(function() {
       $('.counter').css('color', 'red');
      
     } else {
+      $('.error').hide();
+      $('._error').hide();
       $('.counter').css('color','#545149');
     }
 
