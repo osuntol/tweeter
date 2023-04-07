@@ -72,7 +72,7 @@ $(document).ready(function() {
         renderTweets(response);
       })
       //using catch to console log error if one occurs
-      .catch ((err) => {
+      .catch((err) => {
         console.error(err)
       })
   }
@@ -84,11 +84,11 @@ $(document).ready(function() {
     const data = $('#tweet-text').serialize();
     if (data.length <= 5) {
       $('._error').slideDown();
-      
     } if (data.length > 145) {
       $('.error').slideDown();
     } else {
-      $('.error').hide()
+      $('.error').hide();
+      $('._error').hide();
       $.ajax({
         type: 'POST',
         url: '/tweets',
