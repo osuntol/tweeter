@@ -10,6 +10,7 @@
 $(document).ready(function() {
   //hide error element tag 
   $('.error').hide()
+  $('._error').hide()
 
   //using escape text to prevent script inputs from withtin the app
   const escapeText = function(str) {
@@ -55,7 +56,8 @@ $(document).ready(function() {
   }
 
   const renderTweets = function(tweets) {
-    const container = $('#tweets-container')
+    const container = $('#tweets-container');
+    container.empty();
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       container.prepend($tweet);
@@ -69,6 +71,10 @@ $(document).ready(function() {
       .then((response) => {
         renderTweets(response);
       })
+      //using catch to console log error if one occurs
+      .catch ((err) => {
+        console.error(err)
+      })
   }
 
   loadTweets();
@@ -77,7 +83,8 @@ $(document).ready(function() {
     event.preventDefault();
     const data = $('#tweet-text').serialize();
     if (data.length <= 5) {
-      return alert('tweet not present')
+      $('._error').slideDown();
+      
     } if (data.length > 145) {
       $('.error').slideDown();
     } else {
@@ -89,6 +96,7 @@ $(document).ready(function() {
         success: function() {
           loadTweets();
           $('#tweet-text').val('')
+          $('.counter').val('140')
         },
         error: function(xhr, status, error) {
           console.error(error);
