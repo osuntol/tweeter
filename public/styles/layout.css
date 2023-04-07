@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,39 +17,46 @@ html {
  * Global layout stuff
  */
 /* Mobile Styles */
- @media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {}
 
-
-}
 /* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px){
-  
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
   .navbar {
     background-color: burlywood;
   }
 
 
- }
-/* Desktop Styles */
- @media only screen and (min-width: 961px){
- 
-body{
-  display: flex;
 }
 
-.header{
-  margin: 15rem;
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+
+  #submit-form {
+    margin-right: 1.5rem;
+  }
+
+  #tweets-container {
+    margin-right: 1.5em;
+  }
+
+  body {
+    display: flex;
+  }
+
+  .header {
+    margin: 15rem;
+  }
 }
- }
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family:'Source Sans Pro', sans-serif ;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-main{
+main {
   width: 90%;
   margin-right: 2.5em;
   margin-left: 2.5em;
