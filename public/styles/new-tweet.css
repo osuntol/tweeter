@@ -51,6 +51,13 @@
   align-items: center;
   font-family: 'Bungee', cursive;
 }
+._error {
+  padding: 4rem;
+  color: red;
+  display: flex;
+  align-items: center;
+  font-family: 'Bungee', cursive;
+}
 
 article {
   margin-top: 1rem;
