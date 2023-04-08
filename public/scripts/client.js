@@ -10,7 +10,7 @@
 $(document).ready(function() {
   //hide error element tag 
   $('.error').hide()
-  $('._error').hide()
+  
 
   //using escape text to prevent script inputs from withtin the app
   const escapeText = function(str) {
@@ -83,12 +83,15 @@ $(document).ready(function() {
     event.preventDefault();
     const data = $('#tweet-text').serialize();
     if (data.length <= 5) {
-      $('._error').slideDown();
-    } if (data.length > 145) {
+//$('.error').css('display','flex');
+      $('.error').text('!!TWEET TOO SHORT PLZ LENGTHEN TWEET!!');
+      $('.error').slideDown();
+    } else if (data.length > 145) {
+
+      $('.error').text('!!TWEET TOO LONG PLZ SHORTEN TWEET!!');
       $('.error').slideDown();
     } else {
       $('.error').hide();
-      $('._error').hide();
       $.ajax({
         type: 'POST',
         url: '/tweets',
