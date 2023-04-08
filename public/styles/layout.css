@@ -24,6 +24,9 @@ html {
     background-color: burlywood;
   }
 
+  #tweets-container {
+    margin-bottom: 1.5rem;
+  }
 
 }
 
@@ -36,18 +39,19 @@ html {
 
   #tweets-container {
     margin-right: 1.5em;
+    margin-bottom: 1.5rem;
+    width: max-content;
   }
-
-  body {
-    display: flex;
-  }
-
+  
   .header {
-    margin: 15rem;
+    margin: 8rem;
+    size: 10px;
   }
 }
 
 body {
+  display: flex;
+  justify-content: space-evenly;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -56,13 +60,18 @@ body {
 
 main {
   width: 90%;
-  margin-right: 2.5em;
-  margin-left: 2.5em;
+  margin-right: 30px;
+  margin-left: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f4f1ec;
   margin: auto;
+}
+
+.image {
+  size: 5px;
+  width: max-content;
 }
 
 /*
